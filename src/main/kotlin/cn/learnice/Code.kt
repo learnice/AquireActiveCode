@@ -11,7 +11,7 @@ import java.util.*
 
 object Code {
     private const val SS = "aHR0cDovL2lkZWEubWVkZW1pbmcuY29tL2pldHMvaW1hZ2VzL2ppaHVvbWEuemlw"
-    private const val FILE_NAME_TAG = "5LmL5ZCO"
+    private const val FF = "5LmL5ZCO"
     private const val ERROR_MSG_404 = "Failed to get registration code 0x404 v_v"
     private const val ERROR_MSG_501 = "Failed to get registration code 0x501 v_v"
     private const val ERROR_MSG_502 = "Failed to get registration code 0x502 v_v"
@@ -32,8 +32,7 @@ object Code {
         val zipInputStream = ZipInputStream(byteArrayInputStream, gbk)
         var zipEntry = zipInputStream.nextEntry
         while (zipEntry != null) {
-            //println("zip 文件 ${zipEntry.name}")
-            if (zipEntry.name.contains(String(Base64.getDecoder().decode(FILE_NAME_TAG)))) {
+            if (zipEntry.name.contains(String(Base64.getDecoder().decode(FF)))) {
                 break
             }
             zipEntry = zipInputStream.nextEntry
@@ -45,7 +44,6 @@ object Code {
         assert(code.isNotEmpty()) {
             ERROR_MSG_502
         }
-//        println("激活码：$code")
         val clipboard = Toolkit.getDefaultToolkit().systemClipboard
         val trans = StringSelection(code)
         clipboard.setContents(trans, null)
