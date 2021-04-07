@@ -18,8 +18,8 @@ object Activity {
             "<body></html>"
     private const val GITHUB = "https://github.com/learnice/AquireActiveCode"
     private val githubUrl = URI(GITHUB)
-    private const val OPEN_SOURCE = "Open Source"
-    private const val COPY_ACTION = "复制激活码"
+    private const val OPEN_SOURCE = "open source"
+    private const val COPY_ACTION = "copy to clipboard"
 
     init {
         val jFrame = JFrame(TITLE)
@@ -40,7 +40,7 @@ object Activity {
         }
         jButtonCopy = JButton()
         jButtonCopy.text = COPY_ACTION
-        val dimension = Dimension(100, 50)
+        val dimension = Dimension(200, 50)
         jButtonCopy.preferredSize = dimension
         jButtonCopy.addActionListener {
             Code.acquireCode()
