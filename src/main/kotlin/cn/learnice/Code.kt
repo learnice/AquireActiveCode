@@ -10,7 +10,7 @@ import java.nio.charset.Charset
 import java.util.*
 
 object Code {
-    private const val SS = "aHR0cDovL2lkZWEubWVkZW1pbmcuY29tL2EvamlodW9tYS56aXA="
+    private const val SS = "aHR0cDovL2lkZWEubWVkZW1pbmcuY29tL2EvamlodW9tYTEuemlw"
     private const val FF = "5LmL5ZCO"
     private const val ERROR_MSG_404 = "Failed to get registration code 0x404 v_v"
     private const val ERROR_MSG_501 = "Failed to get registration code 0x501 v_v"
